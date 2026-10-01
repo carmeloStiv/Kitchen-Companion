@@ -7,21 +7,21 @@
 
 import Foundation
 
-/// Why a required ingredient isn't confirmed covered by the household's stock.
+// Why a required ingredient isn't confirmed covered by the household's stock.
 enum IngredientShortfallReason: Equatable {
     case missingEntirely
     case insufficientQuantity(haveQuantity: Quantity)
     case unitMismatch(haveQuantity: Quantity)
 }
 
-/// One ingredient the household is short of for a recipe.
+// One ingredient the household is short of for a recipe.
 struct IngredientShortfall: Equatable, Identifiable {
     var id: String { requirement.id }
     let requirement: RecipeIngredientRequirement
     let reason: IngredientShortfallReason
 }
 
-/// Result of checking a recipe against the household's current ingredient stock.
+// Result of checking a recipe against the household's current ingredient stock.
 struct RecipeFeasibilityReport: Equatable {
     let recipeID: RecipeIdentifier
     let shortfalls: [IngredientShortfall]

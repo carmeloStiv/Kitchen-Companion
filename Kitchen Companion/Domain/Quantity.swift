@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// A kitchen unit of measure - units are never auto-converted between each other.
+// A kitchen unit of measure - units are never auto-converted between each other.
 enum UnitOfMeasure: String, Codable, CaseIterable {
     case grams, kilograms, milliliters, liters, pieces, teaspoons, tablespoons, cups
 
@@ -25,7 +25,7 @@ enum UnitOfMeasure: String, Codable, CaseIterable {
     }
 }
 
-/// An amount of something in a specific unit, e.g. "200 grams" or "2 cups".
+// An amount of something in a specific unit, e.g. "200 grams" or "2 cups".
 struct Quantity: Equatable, Codable {
     var amount: Double
     var unit: UnitOfMeasure
@@ -37,7 +37,7 @@ struct Quantity: Equatable, Codable {
         return "\(trimmedAmount) \(unit.displayName)"
     }
 
-    /// Returns nil (not false) when units differ and can't be honestly compared.
+    // Returns nil (not false) when units differ and can't be honestly compared.
     func covers(_ required: Quantity) -> Bool? {
         guard unit == required.unit else { return nil }
         return amount >= required.amount
