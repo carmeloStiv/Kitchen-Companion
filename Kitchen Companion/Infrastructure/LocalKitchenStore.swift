@@ -17,8 +17,6 @@ final class LocalKitchenStore: IngredientPantry, RecipeBook {
         self.recipes = recipes
     }
 
-    // MARK: - IngredientPantry
-
     func allIngredients() -> [HouseholdIngredient] { ingredients }
 
     func ingredient(named name: String) -> HouseholdIngredient? {
@@ -34,7 +32,15 @@ final class LocalKitchenStore: IngredientPantry, RecipeBook {
         }
     }
 
-    // MARK: - RecipeBook
+    // Kept here so this in-memory store still conforms to IngredientPantry
+    // now that the protocol has this method.
+    func ingredientsExpiring(within days: Int, of referenceDate: Date) -> [HouseholdIngredient] {
+        let cutoff = Calendar.current.date(byAdding: .day, value: days, to: referenceDate) ?? referenceDate
+        return ingredients.filter { ingredient in
+            guard let expiryDate = ingredient.expiryDate else { return false }
+            return expiryDate <= cutoff
+        }
+    }
 
     func allRecipes() -> [Recipe] { recipes }
 
