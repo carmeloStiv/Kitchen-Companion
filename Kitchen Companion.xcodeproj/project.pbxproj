@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		0273AE25912278CB83DAC1EB /* KitchenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B2D2FC8B1DD788DEBFCA4 /* KitchenUITests.swift */; };
 		06515CCA2937E72E9ED9B784 /* RecordHouseholdIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428C78B5EE833368CF08394 /* RecordHouseholdIngredientUseCaseTests.swift */; };
+		25609FD2ACE143D9AB176803 /* CheckExpiringIngredientsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */; };
 		34C6AFE51E2560C7014B1641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4215DA57CCED4DC73B681F /* Foundation.framework */; };
+		46030151A03C4ACAB4F0D1EB /* GenerateShoppingListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */; };
 		4B610E0D87945F85BC420B82 /* AddRecipeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DA6DB6BFFE8573B608DD5 /* AddRecipeUseCaseTests.swift */; };
 		4E558E6886F27BCA51BFE136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4215DA57CCED4DC73B681F /* Foundation.framework */; };
 		63F6DF873B2B7CA258096C1A /* CheckRecipeFeasibilityUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */; };
 		710E843C912F1236DAC4767D /* ResultTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0DE6B90CF896AAA18C0E7 /* ResultTestHelper.swift */; };
+		745239DD16EA4160BAF94CE9 /* TrackIngredientExpiryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */; };
+		992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */; };
 		B1BCD6BD3614C9554BFE59E5 /* RecipeDraftParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33772EA15E654F7B884CB09B /* RecipeDraftParserTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,15 +39,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MarkShoppingItemPurchasedUseCaseTests.swift; sourceTree = "<group>"; };
 		29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckRecipeFeasibilityUseCaseTests.swift; sourceTree = "<group>"; };
 		33772EA15E654F7B884CB09B /* RecipeDraftParserTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecipeDraftParserTests.swift; sourceTree = "<group>"; };
 		4A7141DC542391DB8865B0BB /* Kitchen CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1DA6DB6BFFE8573B608DD5 /* AddRecipeUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddRecipeUseCaseTests.swift; sourceTree = "<group>"; };
 		5F6B2D2FC8B1DD788DEBFCA4 /* KitchenUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KitchenUITests.swift; sourceTree = "<group>"; };
 		61F0DE6B90CF896AAA18C0E7 /* ResultTestHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResultTestHelper.swift; sourceTree = "<group>"; };
+		6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenerateShoppingListUseCaseTests.swift; sourceTree = "<group>"; };
 		958337C5304FD17900EA86D6 /* Kitchen Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57CC753B6F7DC4EAE8110C5 /* Kitchen CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckExpiringIngredientsUseCaseTests.swift; sourceTree = "<group>"; };
 		BE4215DA57CCED4DC73B681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackIngredientExpiryUseCaseTests.swift; sourceTree = "<group>"; };
 		F428C78B5EE833368CF08394 /* RecordHouseholdIngredientUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecordHouseholdIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +127,10 @@
 				5A1DA6DB6BFFE8573B608DD5 /* AddRecipeUseCaseTests.swift */,
 				29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */,
 				33772EA15E654F7B884CB09B /* RecipeDraftParserTests.swift */,
+				EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */,
+				B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */,
+				6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */,
+				051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */,
 			);
 			path = "Kitchen CompanionTests";
 			sourceTree = "<group>";
@@ -283,6 +295,10 @@
 				4B610E0D87945F85BC420B82 /* AddRecipeUseCaseTests.swift in Sources */,
 				63F6DF873B2B7CA258096C1A /* CheckRecipeFeasibilityUseCaseTests.swift in Sources */,
 				B1BCD6BD3614C9554BFE59E5 /* RecipeDraftParserTests.swift in Sources */,
+				745239DD16EA4160BAF94CE9 /* TrackIngredientExpiryUseCaseTests.swift in Sources */,
+				25609FD2ACE143D9AB176803 /* CheckExpiringIngredientsUseCaseTests.swift in Sources */,
+				46030151A03C4ACAB4F0D1EB /* GenerateShoppingListUseCaseTests.swift in Sources */,
+				992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
