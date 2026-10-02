@@ -15,11 +15,15 @@ struct IngredientInventoryView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.ingredients) { ingredient in
-                HStack {
-                    Text(ingredient.name).font(.headline)
-                    Spacer()
-                    Text(ingredient.quantityOnHand.displayText)
-                        .foregroundStyle(.secondary)
+                NavigationLink {
+                    IngredientDetailView(viewModel: viewModel, ingredient: ingredient)
+                } label: {
+                    HStack {
+                        Text(ingredient.name).font(.headline)
+                        Spacer()
+                        Text(ingredient.quantityOnHand.displayText)
+                            .foregroundStyle(.secondary)
+                    }
                 }
             }
             .navigationTitle("My Ingredients")
