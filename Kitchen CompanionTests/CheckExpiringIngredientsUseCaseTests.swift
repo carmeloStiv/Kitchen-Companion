@@ -30,6 +30,10 @@ private final class MockIngredientPantry: IngredientPantry {
         }
     }
 
+    func delete(ingredientID: IngredientIdentifier) {
+        ingredients.removeAll { $0.id == ingredientID }
+    }
+
     func ingredientsExpiring(within days: Int, of referenceDate: Date) -> [HouseholdIngredient] {
         let cutoff = Calendar.current.date(byAdding: .day, value: days, to: referenceDate) ?? referenceDate
         return ingredients.filter { ingredient in

@@ -19,6 +19,7 @@
 		745239DD16EA4160BAF94CE9 /* TrackIngredientExpiryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */; };
 		992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */; };
 		B1BCD6BD3614C9554BFE59E5 /* RecipeDraftParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33772EA15E654F7B884CB09B /* RecipeDraftParserTests.swift */; };
+		F574A39963F24E6AA549F43B /* DeleteHouseholdIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5F6B2D2FC8B1DD788DEBFCA4 /* KitchenUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KitchenUITests.swift; sourceTree = "<group>"; };
 		61F0DE6B90CF896AAA18C0E7 /* ResultTestHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResultTestHelper.swift; sourceTree = "<group>"; };
 		6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenerateShoppingListUseCaseTests.swift; sourceTree = "<group>"; };
+		74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeleteHouseholdIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 		958337C5304FD17900EA86D6 /* Kitchen Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57CC753B6F7DC4EAE8110C5 /* Kitchen CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckExpiringIngredientsUseCaseTests.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */,
 				6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */,
 				051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */,
+				74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */,
 			);
 			path = "Kitchen CompanionTests";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				25609FD2ACE143D9AB176803 /* CheckExpiringIngredientsUseCaseTests.swift in Sources */,
 				46030151A03C4ACAB4F0D1EB /* GenerateShoppingListUseCaseTests.swift in Sources */,
 				992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */,
+				F574A39963F24E6AA549F43B /* DeleteHouseholdIngredientUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
