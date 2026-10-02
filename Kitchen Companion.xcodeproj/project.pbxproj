@@ -17,12 +17,22 @@
 		63F6DF873B2B7CA258096C1A /* CheckRecipeFeasibilityUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */; };
 		710E843C912F1236DAC4767D /* ResultTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0DE6B90CF896AAA18C0E7 /* ResultTestHelper.swift */; };
 		745239DD16EA4160BAF94CE9 /* TrackIngredientExpiryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */; };
+		95833E72306F46ED00EA86D6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95833E71306F46ED00EA86D6 /* WidgetKit.framework */; };
+		95833E74306F46ED00EA86D6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95833E73306F46ED00EA86D6 /* SwiftUI.framework */; };
+		95833E83306F46EF00EA86D6 /* KitchenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95833E70306F46ED00EA86D6 /* KitchenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */; };
 		B1BCD6BD3614C9554BFE59E5 /* RecipeDraftParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33772EA15E654F7B884CB09B /* RecipeDraftParserTests.swift */; };
 		F574A39963F24E6AA549F43B /* DeleteHouseholdIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		95833E81306F46EF00EA86D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 958337BD304FD17900EA86D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95833E6F306F46ED00EA86D6;
+			remoteInfo = KitchenWidgetExtension;
+		};
 		BB39B652C3416CED34B48BF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 958337BD304FD17900EA86D6 /* Project object */;
@@ -39,6 +49,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95833E88306F46EF00EA86D6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				95833E83306F46EF00EA86D6 /* KitchenWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MarkShoppingItemPurchasedUseCaseTests.swift; sourceTree = "<group>"; };
 		29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckRecipeFeasibilityUseCaseTests.swift; sourceTree = "<group>"; };
@@ -50,6 +74,10 @@
 		6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenerateShoppingListUseCaseTests.swift; sourceTree = "<group>"; };
 		74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeleteHouseholdIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 		958337C5304FD17900EA86D6 /* Kitchen Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95833E70306F46ED00EA86D6 /* KitchenWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KitchenWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		95833E71306F46ED00EA86D6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		95833E73306F46ED00EA86D6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		95833E8A306F4C6400EA86D6 /* KitchenWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KitchenWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
 		A57CC753B6F7DC4EAE8110C5 /* Kitchen CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckExpiringIngredientsUseCaseTests.swift; sourceTree = "<group>"; };
 		BE4215DA57CCED4DC73B681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,10 +85,48 @@
 		F428C78B5EE833368CF08394 /* RecordHouseholdIngredientUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecordHouseholdIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		95833E84306F46EF00EA86D6 /* Exceptions for "KitchenWidget" folder in "KitchenWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 95833E6F306F46ED00EA86D6 /* KitchenWidgetExtension */;
+		};
+		95833F4D306F4F0C00EA86D6 /* Exceptions for "Kitchen Companion" folder in "KitchenWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Domain/DomainProtocols.swift,
+				Domain/HouseholdIngredient.swift,
+				Domain/Identifiers.swift,
+				Domain/Quantity.swift,
+				Domain/Recipe.swift,
+				Domain/ShoppingListItem.swift,
+				Infrastructure/IngredientRecord.swift,
+				Infrastructure/KitchenCompanionContainer.swift,
+				Infrastructure/ShoppingListItemRecord.swift,
+				Infrastructure/SwiftDataIngredientPantry.swift,
+				UseCases/CheckExpiringIngredientsUseCase.swift,
+			);
+			target = 95833E6F306F46ED00EA86D6 /* KitchenWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		958337C7304FD17900EA86D6 /* Kitchen Companion */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				95833F4D306F4F0C00EA86D6 /* Exceptions for "Kitchen Companion" folder in "KitchenWidgetExtension" target */,
+			);
 			path = "Kitchen Companion";
+			sourceTree = "<group>";
+		};
+		95833E75306F46ED00EA86D6 /* KitchenWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				95833E84306F46EF00EA86D6 /* Exceptions for "KitchenWidget" folder in "KitchenWidgetExtension" target */,
+			);
+			path = KitchenWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -89,6 +155,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95833E6D306F46ED00EA86D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95833E74306F46ED00EA86D6 /* SwiftUI.framework in Frameworks */,
+				95833E72306F46ED00EA86D6 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				BE6D7378D9E937FB6A08D360 /* iOS */,
+				95833E71306F46ED00EA86D6 /* WidgetKit.framework */,
+				95833E73306F46ED00EA86D6 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,7 +180,9 @@
 		958337BC304FD17900EA86D6 = {
 			isa = PBXGroup;
 			children = (
+				95833E8A306F4C6400EA86D6 /* KitchenWidgetExtensionRelease.entitlements */,
 				958337C7304FD17900EA86D6 /* Kitchen Companion */,
+				95833E75306F46ED00EA86D6 /* KitchenWidget */,
 				958337C6304FD17900EA86D6 /* Products */,
 				3A43133F959920103E7E103E /* Frameworks */,
 				BD1D8FD8B8BF0C1666AF23DC /* Kitchen CompanionTests */,
@@ -117,6 +196,7 @@
 				958337C5304FD17900EA86D6 /* Kitchen Companion.app */,
 				4A7141DC542391DB8865B0BB /* Kitchen CompanionTests.xctest */,
 				A57CC753B6F7DC4EAE8110C5 /* Kitchen CompanionUITests.xctest */,
+				95833E70306F46ED00EA86D6 /* KitchenWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,10 +262,12 @@
 				958337C1304FD17900EA86D6 /* Sources */,
 				958337C2304FD17900EA86D6 /* Frameworks */,
 				958337C3304FD17900EA86D6 /* Resources */,
+				95833E88306F46EF00EA86D6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				95833E82306F46EF00EA86D6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				958337C7304FD17900EA86D6 /* Kitchen Companion */,
@@ -194,6 +276,28 @@
 			productName = "Kitchen Companion";
 			productReference = 958337C5304FD17900EA86D6 /* Kitchen Companion.app */;
 			productType = "com.apple.product-type.application";
+		};
+		95833E6F306F46ED00EA86D6 /* KitchenWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95833E85306F46EF00EA86D6 /* Build configuration list for PBXNativeTarget "KitchenWidgetExtension" */;
+			buildPhases = (
+				95833E6C306F46ED00EA86D6 /* Sources */,
+				95833E6D306F46ED00EA86D6 /* Frameworks */,
+				95833E6E306F46ED00EA86D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				95833E75306F46ED00EA86D6 /* KitchenWidget */,
+			);
+			name = KitchenWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = KitchenWidgetExtension;
+			productReference = 95833E70306F46ED00EA86D6 /* KitchenWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		EC750897AD35CF87A2FDEBF4 /* Kitchen CompanionTests */ = {
 			isa = PBXNativeTarget;
@@ -226,6 +330,9 @@
 					958337C4304FD17900EA86D6 = {
 						CreatedOnToolsVersion = 26.5;
 					};
+					95833E6F306F46ED00EA86D6 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 				};
 			};
 			buildConfigurationList = 958337C0304FD17900EA86D6 /* Build configuration list for PBXProject "Kitchen Companion" */;
@@ -245,6 +352,7 @@
 				958337C4304FD17900EA86D6 /* Kitchen Companion */,
 				EC750897AD35CF87A2FDEBF4 /* Kitchen CompanionTests */,
 				8CD57DA160F924CA723D46C7 /* Kitchen CompanionUITests */,
+				95833E6F306F46ED00EA86D6 /* KitchenWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +366,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		958337C3304FD17900EA86D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95833E6E306F46ED00EA86D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,6 +398,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		958337C1304FD17900EA86D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95833E6C306F46ED00EA86D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,6 +442,11 @@
 			name = "Kitchen Companion";
 			target = 958337C4304FD17900EA86D6 /* Kitchen Companion */;
 			targetProxy = BB39B652C3416CED34B48BF6 /* PBXContainerItemProxy */;
+		};
+		95833E82306F46EF00EA86D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95833E6F306F46ED00EA86D6 /* KitchenWidgetExtension */;
+			targetProxy = 95833E81306F46EF00EA86D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -473,8 +600,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Kitchen Companion/Kitchen CompanionRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z92N337RRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kitchen Companion uses on-device speech recognition to turn an imported cooking video into a draft recipe for you to review.";
@@ -505,8 +634,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Kitchen Companion/Kitchen CompanionRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z92N337RRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kitchen Companion uses on-device speech recognition to turn an imported cooking video into a draft recipe for you to review.";
@@ -525,6 +656,68 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		95833E86306F46EF00EA86D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = KitchenWidgetExtensionRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z92N337RRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KitchenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KitchenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CarmeloS.Kitchen-Companion.KitchenWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95833E87306F46EF00EA86D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = KitchenWidgetExtensionRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z92N337RRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KitchenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KitchenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CarmeloS.Kitchen-Companion.KitchenWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -585,6 +778,15 @@
 			buildConfigurations = (
 				958337D1304FD17B00EA86D6 /* Debug */,
 				958337D2304FD17B00EA86D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95833E85306F46EF00EA86D6 /* Build configuration list for PBXNativeTarget "KitchenWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95833E86306F46EF00EA86D6 /* Debug */,
+				95833E87306F46EF00EA86D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
