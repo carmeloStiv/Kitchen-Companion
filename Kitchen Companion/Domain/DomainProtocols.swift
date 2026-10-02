@@ -16,6 +16,7 @@ protocol IngredientPantry {
     func allIngredients() -> [HouseholdIngredient]
     func ingredient(named name: String) -> HouseholdIngredient?
     func save(ingredient: HouseholdIngredient)
+    func delete(ingredientID: IngredientIdentifier)
     func ingredientsExpiring(within days: Int, of referenceDate: Date) -> [HouseholdIngredient]
 }
 

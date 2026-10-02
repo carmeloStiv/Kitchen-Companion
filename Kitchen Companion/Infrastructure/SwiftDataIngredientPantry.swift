@@ -52,6 +52,15 @@ final class SwiftDataIngredientPantry: IngredientPantry {
         try? context.save()
     }
 
+    func delete(ingredientID: IngredientIdentifier) {
+        let targetID = ingredientID.rawValue
+        let descriptor = FetchDescriptor<IngredientRecord>(predicate: #Predicate { $0.id == targetID })
+        if let record = try? context.fetch(descriptor).first {
+            context.delete(record)
+            try? context.save()
+        }
+    }
+
     // Predicate driven query used by the Expiring Soon screen and the
     // widget/notification extension. Fetches everything with a non nil
     // expiry date and filters in plain Swift, rather than trying to force

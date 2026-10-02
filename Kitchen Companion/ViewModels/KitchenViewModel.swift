@@ -17,6 +17,7 @@ final class KitchenViewModel: ObservableObject {
     private let store: IngredientPantry & RecipeBook
 
     private let recordIngredientUseCase = RecordHouseholdIngredientUseCase()
+    private let deleteIngredientUseCase = DeleteHouseholdIngredientUseCase()
     private let addRecipeUseCase = AddRecipeUseCase()
     private let checkFeasibilityUseCase = CheckRecipeFeasibilityUseCase()
 
@@ -34,6 +35,23 @@ final class KitchenViewModel: ObservableObject {
         switch recordIngredientUseCase.execute(name: name, quantity: quantity, existingIngredient: existing) {
         case .success(let ingredient):
             store.save(ingredient: ingredient)
+            ingredients = store.allIngredients()
+            errorMessage = nil
+            return true
+        case .failure(let failure):
+            errorMessage = failure.errorDescription
+            return false
+        }
+    }
+
+    // Removes an ingredient the household no longer wants to track.
+    @discardableResult
+    func deleteIngredient(_ ingredient: HouseholdIngredient) -> Bool {
+        let current = ingredients.first { $0.id == ingredient.id }
+
+        switch deleteIngredientUseCase.execute(ingredientID: ingredient.id, existingIngredient: current) {
+        case .success(let ingredientID):
+            store.delete(ingredientID: ingredientID)
             ingredients = store.allIngredients()
             errorMessage = nil
             return true

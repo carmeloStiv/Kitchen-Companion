@@ -32,6 +32,10 @@ final class LocalKitchenStore: IngredientPantry, RecipeBook {
         }
     }
 
+    func delete(ingredientID: IngredientIdentifier) {
+        ingredients.removeAll { $0.id == ingredientID }
+    }
+
     // Kept here so this in-memory store still conforms to IngredientPantry
     // now that the protocol has this method.
     func ingredientsExpiring(within days: Int, of referenceDate: Date) -> [HouseholdIngredient] {
