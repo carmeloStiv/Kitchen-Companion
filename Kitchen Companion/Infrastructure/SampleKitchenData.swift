@@ -11,8 +11,8 @@ import Foundation
 enum SampleKitchenData {
     static let ingredients: [HouseholdIngredient] = [
         HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-1"), name: "Plain Flour", quantityOnHand: Quantity(amount: 500, unit: .grams), updatedAt: Date()),
-        HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-2"), name: "Eggs", quantityOnHand: Quantity(amount: 6, unit: .pieces), updatedAt: Date()),
-        HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-3"), name: "Milk", quantityOnHand: Quantity(amount: 500, unit: .milliliters), updatedAt: Date()),
+        HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-2"), name: "Eggs", quantityOnHand: Quantity(amount: 6, unit: .pieces), expiryDate: Calendar.current.date(byAdding: .day, value: 10, to: Date()), updatedAt: Date()),
+        HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-3"), name: "Milk", quantityOnHand: Quantity(amount: 500, unit: .milliliters), expiryDate: Calendar.current.date(byAdding: .day, value: 2, to: Date()), updatedAt: Date()),
         HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-4"), name: "Sugar", quantityOnHand: Quantity(amount: 200, unit: .grams), updatedAt: Date())
     ]
 

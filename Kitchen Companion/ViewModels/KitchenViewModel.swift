@@ -7,36 +7,52 @@
 
 import Foundation
 import Combine
+import SwiftData
+import WidgetKit
 
 // Drives the ingredient inventory and recipe book screens.
+// Ingredients persist through the App Group SwiftData store, so the
+// Expiring Soon widget reads the same pantry the app shows. Recipes stay in
+// an in-memory store for now, they are not part of this round of work.
 final class KitchenViewModel: ObservableObject {
     @Published var ingredients: [HouseholdIngredient]
     @Published var recipes: [Recipe]
     @Published var errorMessage: String?
 
-    private let store: IngredientPantry & RecipeBook
+    private let pantry: IngredientPantry
+    private let recipeBook: RecipeBook
 
     private let recordIngredientUseCase = RecordHouseholdIngredientUseCase()
     private let deleteIngredientUseCase = DeleteHouseholdIngredientUseCase()
     private let addRecipeUseCase = AddRecipeUseCase()
     private let checkFeasibilityUseCase = CheckRecipeFeasibilityUseCase()
 
-    init(store: IngredientPantry & RecipeBook = LocalKitchenStore()) {
-        self.store = store
-        self.ingredients = store.allIngredients()
-        self.recipes = store.allRecipes()
+    init(
+        pantry: IngredientPantry = SwiftDataIngredientPantry(context: ModelContext(KitchenCompanionContainer.shared)),
+        recipeBook: RecipeBook = LocalKitchenStore()
+    ) {
+        self.pantry = pantry
+        self.recipeBook = recipeBook
+
+        if pantry.allIngredients().isEmpty {
+            SampleKitchenData.ingredients.forEach(pantry.save(ingredient:))
+        }
+
+        self.ingredients = pantry.allIngredients()
+        self.recipes = recipeBook.allRecipes()
     }
 
     // Records or updates a household ingredient.
     @discardableResult
     func recordIngredient(name: String, quantity: Quantity) -> Bool {
-        let existing = store.ingredient(named: name)
+        let existing = pantry.ingredient(named: name)
 
         switch recordIngredientUseCase.execute(name: name, quantity: quantity, existingIngredient: existing) {
         case .success(let ingredient):
-            store.save(ingredient: ingredient)
-            ingredients = store.allIngredients()
+            pantry.save(ingredient: ingredient)
+            ingredients = pantry.allIngredients()
             errorMessage = nil
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         case .failure(let failure):
             errorMessage = failure.errorDescription
@@ -51,9 +67,10 @@ final class KitchenViewModel: ObservableObject {
 
         switch deleteIngredientUseCase.execute(ingredientID: ingredient.id, existingIngredient: current) {
         case .success(let ingredientID):
-            store.delete(ingredientID: ingredientID)
-            ingredients = store.allIngredients()
+            pantry.delete(ingredientID: ingredientID)
+            ingredients = pantry.allIngredients()
             errorMessage = nil
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         case .failure(let failure):
             errorMessage = failure.errorDescription
@@ -66,8 +83,8 @@ final class KitchenViewModel: ObservableObject {
     func addRecipe(title: String, ingredients: [RecipeIngredientRequirement], steps: [RecipeStep], source: RecipeSource) -> Bool {
         switch addRecipeUseCase.execute(title: title, ingredients: ingredients, steps: steps, source: source) {
         case .success(let recipe):
-            store.save(recipe: recipe)
-            recipes = store.allRecipes()
+            recipeBook.save(recipe: recipe)
+            recipes = recipeBook.allRecipes()
             errorMessage = nil
             return true
         case .failure(let failure):
