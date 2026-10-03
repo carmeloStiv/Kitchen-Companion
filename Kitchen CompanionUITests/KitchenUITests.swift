@@ -45,4 +45,32 @@ final class KitchenUITests: XCTestCase {
         let expectation = XCTNSPredicateExpectation(predicate: buttonGone, object: app.buttons["Start 2-Minute Timer"])
         XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 3), .completed)
     }
+
+    func test_shoppingList_addsAnItemAndMarksItBought() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-disableReminders"]
+        app.launch()
+
+        // A unique name keeps this test independent of items saved by earlier runs.
+        let itemName = "Butter \(Int(Date().timeIntervalSince1970))"
+
+        app.tabBars.buttons["Shopping List"].tap()
+        app.buttons["Add Shopping Item"].tap()
+        let nameField = app.textFields["What do you need to buy?"]
+        nameField.tap()
+        nameField.typeText(itemName)
+        let amountField = app.textFields["Amount"]
+        amountField.tap()
+        amountField.typeText("2")
+        app.buttons["Add"].tap()
+
+        XCTAssertTrue(app.staticTexts[itemName].waitForExistence(timeout: 5))
+
+        let markBought = app.buttons["Mark \(itemName) as bought"]
+        markBought.tap()
+
+        let buttonGone = NSPredicate(format: "exists == false")
+        let expectation = XCTNSPredicateExpectation(predicate: buttonGone, object: markBought)
+        XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 5), .completed)
+    }
 }
