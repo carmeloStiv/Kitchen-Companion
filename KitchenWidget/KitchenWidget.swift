@@ -13,7 +13,7 @@ import SwiftUI
 // can check it from the Home Screen without opening the app, for example
 // while standing in the kitchen deciding what to cook tonight.
 struct ExpiringSoonProvider: TimelineProvider {
-    private static let lookAheadDays = 3
+    private static let lookAheadDays = CheckExpiringIngredientsUseCase.warningWindowDays
     private let checkExpiringIngredientsUseCase = CheckExpiringIngredientsUseCase()
 
     func placeholder(in context: Context) -> ExpiringSoonEntry {

@@ -43,3 +43,11 @@ protocol ShoppingListRepository {
     func save(item: ShoppingListItem)
     func delete(itemID: String)
 }
+
+// Reminds the household before an ingredient reaches its use-by date.
+// Kept as a protocol so the reminder rules can be tested without
+// scheduling real notifications on a device.
+protocol ExpiryReminderScheduling {
+    func scheduleReminder(for ingredient: HouseholdIngredient, at fireDate: Date)
+    func cancelReminder(forIngredientID ingredientID: IngredientIdentifier)
+}

@@ -12,6 +12,11 @@ import Foundation
 // the Expiring Soon screen, the widget, and the notification extension all
 // get the same sorted, validated result instead of each re-sorting it.
 struct CheckExpiringIngredientsUseCase {
+    // How far ahead the household is warned about an expiring ingredient.
+    // The widget and the reminder notification both use this, so an
+    // ingredient never gets a reminder without also showing in the widget.
+    static let warningWindowDays = 7
+
     enum Failure: LocalizedError, Equatable {
         case lookAheadWindowNotPositive
 
