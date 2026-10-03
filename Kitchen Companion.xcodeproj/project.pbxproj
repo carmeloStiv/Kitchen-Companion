@@ -14,10 +14,12 @@
 		46030151A03C4ACAB4F0D1EB /* GenerateShoppingListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4DC56D768F4402A156B61C /* GenerateShoppingListUseCaseTests.swift */; };
 		4B610E0D87945F85BC420B82 /* AddRecipeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DA6DB6BFFE8573B608DD5 /* AddRecipeUseCaseTests.swift */; };
 		4E558E6886F27BCA51BFE136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4215DA57CCED4DC73B681F /* Foundation.framework */; };
+		5BE257A91A7747A5AB022C5D /* AddShoppingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3A4B98CAF4566821020D7 /* AddShoppingListItemUseCaseTests.swift */; };
 		5E5A009C683A49708F6B7999 /* PlanExpiryReminderUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929261ACC63D45809A483501 /* PlanExpiryReminderUseCaseTests.swift */; };
 		63F6DF873B2B7CA258096C1A /* CheckRecipeFeasibilityUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D2E29879D1DF100200BA /* CheckRecipeFeasibilityUseCaseTests.swift */; };
 		710E843C912F1236DAC4767D /* ResultTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0DE6B90CF896AAA18C0E7 /* ResultTestHelper.swift */; };
 		745239DD16EA4160BAF94CE9 /* TrackIngredientExpiryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */; };
+		766057DAC7F14CA992DBF905 /* RestockFromPurchaseUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD44ABDC7B714BB48246E74D /* RestockFromPurchaseUseCaseTests.swift */; };
 		95833E72306F46ED00EA86D6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95833E71306F46ED00EA86D6 /* WidgetKit.framework */; };
 		95833E74306F46ED00EA86D6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95833E73306F46ED00EA86D6 /* SwiftUI.framework */; };
 		95833E83306F46EF00EA86D6 /* KitchenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95833E70306F46ED00EA86D6 /* KitchenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -95,8 +97,10 @@
 		958340213070CCE100EA86D6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		958340233070CCE100EA86D6 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		A57CC753B6F7DC4EAE8110C5 /* Kitchen CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD44ABDC7B714BB48246E74D /* RestockFromPurchaseUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RestockFromPurchaseUseCaseTests.swift; sourceTree = "<group>"; };
 		B14516B66D714C55850A1DD8 /* CheckExpiringIngredientsUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckExpiringIngredientsUseCaseTests.swift; sourceTree = "<group>"; };
 		BE4215DA57CCED4DC73B681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D4B3A4B98CAF4566821020D7 /* AddShoppingListItemUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddShoppingListItemUseCaseTests.swift; sourceTree = "<group>"; };
 		EF6F663468A54F7087C810A3 /* TrackIngredientExpiryUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackIngredientExpiryUseCaseTests.swift; sourceTree = "<group>"; };
 		F428C78B5EE833368CF08394 /* RecordHouseholdIngredientUseCaseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecordHouseholdIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +263,8 @@
 				051CB390C8024104B9D65953 /* MarkShoppingItemPurchasedUseCaseTests.swift */,
 				74C7A4A507D74A54A7866932 /* DeleteHouseholdIngredientUseCaseTests.swift */,
 				929261ACC63D45809A483501 /* PlanExpiryReminderUseCaseTests.swift */,
+				AD44ABDC7B714BB48246E74D /* RestockFromPurchaseUseCaseTests.swift */,
+				D4B3A4B98CAF4566821020D7 /* AddShoppingListItemUseCaseTests.swift */,
 			);
 			path = "Kitchen CompanionTests";
 			sourceTree = "<group>";
@@ -512,6 +518,8 @@
 				992F6521CD804629827E95EB /* MarkShoppingItemPurchasedUseCaseTests.swift in Sources */,
 				F574A39963F24E6AA549F43B /* DeleteHouseholdIngredientUseCaseTests.swift in Sources */,
 				5E5A009C683A49708F6B7999 /* PlanExpiryReminderUseCaseTests.swift in Sources */,
+				766057DAC7F14CA992DBF905 /* RestockFromPurchaseUseCaseTests.swift in Sources */,
+				5BE257A91A7747A5AB022C5D /* AddShoppingListItemUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
