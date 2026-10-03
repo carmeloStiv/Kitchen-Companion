@@ -8,6 +8,7 @@
 import Foundation
 
 // Creates or updates an ingredient entry; quantity can never be negative.
+// Updating keeps the ingredient's existing use-by date.
 struct RecordHouseholdIngredientUseCase {
     enum Failure: LocalizedError, Equatable {
         case ingredientNameMissing
@@ -41,6 +42,7 @@ struct RecordHouseholdIngredientUseCase {
             id: existingIngredient?.id ?? IngredientIdentifier(rawValue: UUID().uuidString),
             name: trimmedName,
             quantityOnHand: quantity,
+            expiryDate: existingIngredient?.expiryDate,
             updatedAt: now
         )
         return .success(ingredient)

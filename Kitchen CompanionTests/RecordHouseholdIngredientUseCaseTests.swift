@@ -27,6 +27,15 @@ final class RecordHouseholdIngredientUseCaseTests: XCTestCase {
         XCTAssertEqual(result.assertSuccess()?.id, existing.id)
     }
 
+    func test_record_keepsExpiryDate_whenUpdatingAnExistingIngredient() {
+        let expiryDate = Date().addingTimeInterval(86_400)
+        let existing = HouseholdIngredient(id: IngredientIdentifier(rawValue: "I-1"), name: "Milk", quantityOnHand: Quantity(amount: 500, unit: .milliliters), expiryDate: expiryDate, updatedAt: Date())
+
+        let result = useCase.execute(name: "Milk", quantity: Quantity(amount: 250, unit: .milliliters), existingIngredient: existing)
+
+        XCTAssertEqual(result.assertSuccess()?.expiryDate, expiryDate)
+    }
+
     func test_record_fails_whenNameIsEmpty() {
         let result = useCase.execute(name: "   ", quantity: Quantity(amount: 1, unit: .pieces), existingIngredient: nil)
 
