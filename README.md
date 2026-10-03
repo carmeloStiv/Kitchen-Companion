@@ -13,6 +13,7 @@ Rules the app enforces:
 - A use-by date cannot be in the past when it is set.
 - A recipe is only "ready to cook" when every ingredient is on hand in a matching unit and a big enough amount. The app never guesses between units (grams against pieces), it flags the mismatch instead.
 - A shopping list item is never duplicated while it is still pending.
+- Buying a shopping list item adds it to the pantry, but only when the units match. The app never guesses a conversion.
 
 ## Screens
 
@@ -23,6 +24,8 @@ Rules the app enforces:
 | Ingredient detail | Edit an amount or use-by date, or remove it from the pantry |
 | Recipes | Browse recipes with a "ready to cook" status |
 | Recipe detail | Check ingredients against the pantry, follow steps, run timers |
+| Shopping List | See what to buy and what is bought. Ticking an item off adds it to the pantry |
+| Add Shopping Item | Add something to buy by hand. Recipes can also add what they are missing |
 | Add Recipe | Type in a recipe |
 | Import Recipe from Video | Draft a recipe from a cooking video's speech |
 
@@ -68,7 +71,7 @@ Use cases (each has its own typed error enum with messages written for the cook)
 - `RecordHouseholdIngredientUseCase`, `DeleteHouseholdIngredientUseCase`
 - `TrackIngredientExpiryUseCase`, `CheckExpiringIngredientsUseCase`, `PlanExpiryReminderUseCase`
 - `AddRecipeUseCase`, `CheckRecipeFeasibilityUseCase`
-- `GenerateShoppingListUseCase`, `MarkShoppingItemPurchasedUseCase`
+- `AddShoppingListItemUseCase`, `GenerateShoppingListUseCase`, `MarkShoppingItemPurchasedUseCase`, `RestockFromPurchaseUseCase`
 
 ```
 Kitchen Companion/   app: Domain, UseCases, Infrastructure, ViewModels, Views
@@ -78,7 +81,7 @@ KitchenNotification/ notification content extension
 
 ## Testing
 
-There are 46 unit tests across the use cases, written against test doubles instead of the real database, with names that describe the scenario (for example `test_generateShoppingListItem_fails_whenIngredientAlreadyPendingOnList`). There are also 3 UI tests that drive the app in the simulator.
+There are 55 unit tests across the use cases, written against test doubles instead of the real database, with names that describe the scenario (for example `test_generateShoppingListItem_fails_whenIngredientAlreadyPendingOnList`). There are also 4 UI tests that drive the app in the simulator.
 
 Run everything with Cmd+U, or:
 
