@@ -15,11 +15,19 @@ struct RecipeDetailView: View {
     var body: some View {
         List {
             Section("Ingredients") {
+                let shortfalls = viewModel.feasibility(for: recipe).shortfalls
                 let shortfallsByRequirement = Dictionary(
-                    uniqueKeysWithValues: viewModel.feasibility(for: recipe).shortfalls.map { ($0.requirement.id, $0) }
+                    uniqueKeysWithValues: shortfalls.map { ($0.requirement.id, $0) }
                 )
                 ForEach(recipe.ingredients) { requirement in
                     IngredientRequirementStatusRow(requirement: requirement, shortfall: shortfallsByRequirement[requirement.id])
+                }
+                if !shortfalls.isEmpty {
+                    Button {
+                        viewModel.addMissingIngredientsToShoppingList(for: recipe)
+                    } label: {
+                        Label("Add Missing to Shopping List", systemImage: "cart.badge.plus")
+                    }
                 }
             }
 
@@ -30,6 +38,14 @@ struct RecipeDetailView: View {
             }
         }
         .navigationTitle(recipe.title)
+        .alert("Shopping List", isPresented: Binding(
+            get: { viewModel.noticeMessage != nil },
+            set: { _ in viewModel.noticeMessage = nil }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(viewModel.noticeMessage ?? "")
+        }
     }
 }
 

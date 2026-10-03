@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Root view - switches between the Ingredients and Recipes tabs.
+// Root view - switches between the Ingredients, Recipes and Shopping List tabs.
 struct RootView: View {
     @StateObject private var viewModel = KitchenViewModel()
 
@@ -18,6 +18,9 @@ struct RootView: View {
 
             RecipeListView(viewModel: viewModel)
                 .tabItem { Label("Recipes", systemImage: "book.closed.fill") }
+
+            ShoppingListView(viewModel: viewModel)
+                .tabItem { Label("Shopping List", systemImage: "cart.fill") }
         }
         .tint(.accentColor)
     }
