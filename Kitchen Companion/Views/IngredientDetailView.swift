@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Shown when the household taps an ingredient in their inventory.
-// Lets them update how much they have on hand, or remove it from the
+// Lets them update how much they have on hand and its use-by date, or remove it from the
 // pantry entirely if they no longer keep it.
 struct IngredientDetailView: View {
     @ObservedObject var viewModel: KitchenViewModel
@@ -19,6 +19,8 @@ struct IngredientDetailView: View {
     @State private var name: String
     @State private var amount: String
     @State private var unit: UnitOfMeasure
+    @State private var hasExpiryDate: Bool
+    @State private var expiryDate: Date
     @State private var isConfirmingDelete = false
 
     init(viewModel: KitchenViewModel, ingredient: HouseholdIngredient) {
@@ -27,6 +29,10 @@ struct IngredientDetailView: View {
         _name = State(initialValue: ingredient.name)
         _amount = State(initialValue: Self.amountText(for: ingredient.quantityOnHand.amount))
         _unit = State(initialValue: ingredient.quantityOnHand.unit)
+        _hasExpiryDate = State(initialValue: ingredient.expiryDate != nil)
+        _expiryDate = State(initialValue: ingredient.expiryDate
+            ?? Calendar.current.date(byAdding: .day, value: 7, to: Date())
+            ?? Date())
     }
 
     var body: some View {
@@ -45,6 +51,13 @@ struct IngredientDetailView: View {
                 }
             }
 
+            Section("Use-by date") {
+                Toggle("Has a use-by date", isOn: $hasExpiryDate)
+                if hasExpiryDate {
+                    DatePicker("Use by", selection: $expiryDate, displayedComponents: .date)
+                }
+            }
+
             Section {
                 Button("Remove from Pantry", role: .destructive) {
                     isConfirmingDelete = true
@@ -56,7 +69,7 @@ struct IngredientDetailView: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                     let quantity = Quantity(amount: Double(amount) ?? 0, unit: unit)
-                    if viewModel.recordIngredient(name: name, quantity: quantity) {
+                    if viewModel.recordIngredient(name: name, quantity: quantity, expiryDate: hasExpiryDate ? expiryDate : nil) {
                         dismiss()
                     }
                 }

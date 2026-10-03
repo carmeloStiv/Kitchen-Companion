@@ -10,6 +10,7 @@ import XCTest
 final class KitchenUITests: XCTestCase {
     func test_ingredientsTab_showsSeededIngredients() {
         let app = XCUIApplication()
+        app.launchArguments = ["-disableReminders"]
         app.launch()
 
         XCTAssertTrue(app.staticTexts["Plain Flour"].waitForExistence(timeout: 5))
@@ -17,6 +18,7 @@ final class KitchenUITests: XCTestCase {
 
     func test_recipesTab_showsFeasibilityStatus() {
         let app = XCUIApplication()
+        app.launchArguments = ["-disableReminders"]
         app.launch()
 
         app.tabBars.buttons["Recipes"].tap()
@@ -27,6 +29,7 @@ final class KitchenUITests: XCTestCase {
 
     func test_recipeDetail_showsIngredientChecklistAndStartableTimer() {
         let app = XCUIApplication()
+        app.launchArguments = ["-disableReminders"]
         app.launch()
 
         app.tabBars.buttons["Recipes"].tap()

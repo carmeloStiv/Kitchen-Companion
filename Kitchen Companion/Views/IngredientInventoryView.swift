@@ -19,7 +19,14 @@ struct IngredientInventoryView: View {
                     IngredientDetailView(viewModel: viewModel, ingredient: ingredient)
                 } label: {
                     HStack {
-                        Text(ingredient.name).font(.headline)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(ingredient.name).font(.headline)
+                            if let expiryDate = ingredient.expiryDate {
+                                Text("Use by \(expiryDate.formatted(date: .abbreviated, time: .omitted))")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                         Spacer()
                         Text(ingredient.quantityOnHand.displayText)
                             .foregroundStyle(.secondary)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Records an ingredient; saving an existing name updates its quantity.
+// Records an ingredient; saving an existing name updates its quantity and use-by date.
 struct AddIngredientView: View {
     @ObservedObject var viewModel: KitchenViewModel
     @Environment(\.dismiss) private var dismiss
@@ -15,6 +15,8 @@ struct AddIngredientView: View {
     @State private var name = ""
     @State private var amount = ""
     @State private var unit: UnitOfMeasure = .grams
+    @State private var hasExpiryDate = false
+    @State private var expiryDate = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
     @FocusState private var isNameFocused: Bool
 
     var body: some View {
@@ -32,6 +34,12 @@ struct AddIngredientView: View {
                     }
                     .pickerStyle(.menu)
                 }
+                Section("Use-by date") {
+                    Toggle("Has a use-by date", isOn: $hasExpiryDate)
+                    if hasExpiryDate {
+                        DatePicker("Use by", selection: $expiryDate, displayedComponents: .date)
+                    }
+                }
             }
             .navigationTitle("Add Ingredient")
             .onAppear { isNameFocused = true }
@@ -42,7 +50,7 @@ struct AddIngredientView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         let quantity = Quantity(amount: Double(amount) ?? 0, unit: unit)
-                        if viewModel.recordIngredient(name: name, quantity: quantity) {
+                        if viewModel.recordIngredient(name: name, quantity: quantity, expiryDate: hasExpiryDate ? expiryDate : nil) {
                             dismiss()
                         }
                     }
